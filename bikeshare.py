@@ -18,15 +18,15 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
 
 
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         try:
             city = str(input('\n Please, Could you choose one of the cities (Chicago, New york city, Washington): ').lower())
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+    # input for month (all, january, february, ... , june)
             month = str(input('\n Please, Could you choose a month from January to June: ').lower())
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # input for day of week (all, monday, tuesday, ... sunday)
             day = str(input('\n Please, Could you choose a weekday: ').lower())
             break
 
@@ -86,17 +86,17 @@ def time_stats(df):
     start_time = time.time()
 
 
-    # TO DO: display the most common month
+    # display the most common month
     common_month = df['month'].mode()[0]
     print('the most common month: {}'.format(common_month))
 
 
-    # TO DO: display the most common day of week
+    # display the most common day of week
     common_day = df['day_of_week'].mode()[0]
     print('the most common day: {}'.format(common_day))
 
 
-    # TO DO: display the most common start hour
+    # display the most common start hour
     df['start_hour'] = pd.to_datetime(df['Start Time']).dt.hour
     common_start_hour = df['start_hour'].mode()[0]
     print('the most common start hour: {}'.format(common_start_hour))
@@ -113,17 +113,17 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # display most commonly used start station
     common_start_station = df['Start Station'].mode()[0]
     print(' most commonly used start station: {}'.format(common_start_station))
 
 
-    # TO DO: display most commonly used end station
+    # display most commonly used end station
     common_end_station = df['End Station'].mode()[0]
     print('\n most commonly used end station: {}'.format(common_end_station))
 
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # display most frequent combination of start station and end station trip
     start = df['Start Station'].mode()[0]
     end = df['End Station'].mode()[0]
     print('\n most frequent combination of \n start station is: {} \n and end station is: {} \n '.format(start,end))
@@ -141,12 +141,12 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # display total travel time
     total_travel = df['Trip Duration'].sum()
     print('total travel time = {} sec'.format(round(total_travel,1)))
 
 
-    # TO DO: display mean travel time
+    # display mean travel time
     avg_travel = df['Trip Duration'].mean()
     print('mean travel time = {} sec'.format(round(avg_travel,1)))
 
@@ -162,7 +162,7 @@ def user_types(df):
     start_time = time.time()
 
 
-    # TO DO: Display counts of user types
+    # Display counts of user types
     user_types = df['User Type'].value_counts()
     print('counts of user types:\n{}'.format(user_types))
 
@@ -178,12 +178,12 @@ def user_stats(df):
     start_time = time.time()
 
 
-    # TO DO: Display counts of gender
+    # Display counts of gender
     gender = df['Gender'].value_counts()
     print('\ncounts of gender:\n{}'.format(gender))
 
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     birth_year = df['Birth Year'].min()
     print('\n Earliest: {}'.format(int(birth_year)))
 
@@ -214,6 +214,7 @@ def display_raw_data(df):
             i += 2
             print(df[:i]) # to display next two rows
             raw = input('\nWould like to see the raw data, Enter yes or no\n ').lower() # convert the user input to lower case using lower() function
+
         else:
             raw = input("\nYour input is invalid. Please enter only 'yes' or 'no'\n").lower()
 
