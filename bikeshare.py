@@ -205,14 +205,14 @@ def display_raw_data(df):
 
     i = 0
     raw = input("\nWould like to see the raw data, Enter yes or no\n ").lower() # convert the user input to lower case using lower() function
-    pd.set_option('display.max_rows',10)
+    pd.set_option('display.max_rows',2)
 
     while True:
         if raw == 'no':
             break
         elif raw == 'yes':
-            i += 10
-            print(df[:i]) # to display next ten rows
+            i += 2
+            print(df[:i]) # to display next two rows
             raw = input('\nWould like to see the raw data, Enter yes or no\n ').lower() # convert the user input to lower case using lower() function
         else:
             raw = input("\nYour input is invalid. Please enter only 'yes' or 'no'\n").lower()
